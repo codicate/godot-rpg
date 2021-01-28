@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/HUD/health chunk.png" type="Texture" id=1]
+
+[node name="Chunk" type="TextureRect"]
+margin_right = 2.0
+margin_bottom = 5.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

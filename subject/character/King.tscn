@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://asset/characters.png" type="Texture" id=1]
+[ext_resource path="res://module/InteractionZone.tscn" type="PackedScene" id=2]
+[ext_resource path="res://subject/character/King.gd" type="Script" id=3]
+
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 3.99999
+height = 6.00001
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 14.0
+height = 10.0
+
+[node name="King" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 2147483659
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -11 )
+texture = ExtResource( 1 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 9, 42, 15, 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -4 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="InteractionZone" parent="." instance=ExtResource( 2 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone"]
+position = Vector2( 0, -11 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="UI" type="CanvasLayer" parent="."]
