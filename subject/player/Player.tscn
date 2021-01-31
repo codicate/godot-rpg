@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://subject/player/Player.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://subject/player/State.gd" type="Script" id=4]
 [ext_resource path="res://subject/player/body.png" type="Texture" id=5]
 [ext_resource path="res://subject/player/hand.png" type="Texture" id=6]
+[ext_resource path="res://weapon/rpg/RPG.tscn" type="PackedScene" id=7]
 [ext_resource path="res://module/Stat.tscn" type="PackedScene" id=8]
 [ext_resource path="res://subject/player/Hurtbox.gd" type="Script" id=9]
 [ext_resource path="res://weapon/dynamite/Dynamite.tscn" type="PackedScene" id=10]
@@ -136,7 +137,7 @@ script = ExtResource( 4 )
 itemList = [ null, ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 14 ), null, ExtResource( 16 ), ExtResource( 16 ), null, null, null, null, null, null, null ]
 
 [node name="DodgeTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.4
 
 [node name="Body" type="AnimatedSprite" parent="."]
 position = Vector2( -18, -35 )
@@ -173,6 +174,9 @@ visible = false
 visible = false
 
 [node name="Dynamite" parent="AimPivot/EquippedItem" instance=ExtResource( 10 )]
+visible = false
+
+[node name="RPG" parent="AimPivot/EquippedItem" instance=ExtResource( 7 )]
 visible = false
 
 [node name="Hurtbox" type="Area2D" parent="."]

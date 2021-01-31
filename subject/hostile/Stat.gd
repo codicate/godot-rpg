@@ -2,5 +2,5 @@ extends Node
 
 
 export var maxHP = 6
-var HP = maxHP
+onready var HP = maxHP
 export var dmg = 1

@@ -12,7 +12,7 @@ var cooldown = false
 
 
 func _physics_process(_delta):
-	$MuzzleFlash.visible = false
+	$Muzzle/MuzzleFlash.visible = false
 
 	if equipped:
 		if Input.is_action_pressed("clickl"):

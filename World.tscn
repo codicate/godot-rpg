@@ -83,7 +83,40 @@ position = Vector2( 632, 121.228 )
 position = Vector2( 600, 97.2279 )
 
 [node name="Enemy7" parent="YSort/Hostiles" instance=ExtResource( 2 )]
-position = Vector2( 688, 129.228 )
+position = Vector2( 694, 134 )
+
+[node name="Enemy8" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 617, 209 )
+
+[node name="Enemy9" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 734, 149 )
+
+[node name="Enemy10" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 642, 58 )
+
+[node name="Enemy11" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 735, 215 )
+
+[node name="Enemy12" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 690, 56 )
+
+[node name="Enemy13" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 695, 191 )
+
+[node name="Enemy14" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 768, 191 )
+
+[node name="Enemy15" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 680, 218 )
+
+[node name="Enemy16" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 721, 182 )
+
+[node name="Enemy17" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 722, 110 )
+
+[node name="Enemy18" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 760, 139 )
 
 [node name="Items" type="YSort" parent="YSort"]
 

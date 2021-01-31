@@ -75,12 +75,12 @@ wait_time = 0.3
 [node name="Muzzle" type="Position2D" parent="."]
 position = Vector2( 13, -1 )
 
-[node name="Bullets" type="Node" parent="Muzzle"]
-
-[node name="MuzzleFlash" type="Sprite" parent="."]
-position = Vector2( 15, 2 )
+[node name="MuzzleFlash" type="Sprite" parent="Muzzle"]
+position = Vector2( 2, 3 )
 rotation = 0.261799
 texture = ExtResource( 4 )
+
+[node name="Bullets" type="Node" parent="Muzzle"]
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -7 )

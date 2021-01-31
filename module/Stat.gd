@@ -2,10 +2,10 @@ extends Node
 
 
 export var maxHP = 10
-var HP = maxHP
+onready var HP = maxHP
 
 export var maxStamina = 100
-var stamina = maxStamina
+onready var stamina = maxStamina
 
 export (float) var dmgModifier = 1
 

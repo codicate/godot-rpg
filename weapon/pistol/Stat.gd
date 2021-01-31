@@ -1,4 +1,4 @@
 extends Node
 
 
-export (float) var dmg = 1
+export (float) var dmg = 6
