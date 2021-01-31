@@ -41,10 +41,11 @@ func _physics_process(delta):
 			dodging = true
 
 			$DodgeTimer.start()
+			set_collision_mask_bit(3, false)
+			$Hurtbox/CollisionShape2D.disabled = true
 			if !$DodgeTimer.is_connected("timeout", self, "on_DodgeTimer_timeout"):
-				var error = $DodgeTimer.connect("timeout", self, "on_DodgeTimer_timeout", [previous_smoothing_speed])
-				if error != OK:
-					print(error)
+			# warning-ignore:return_value_discarded
+				$DodgeTimer.connect("timeout", self, "on_DodgeTimer_timeout", [previous_smoothing_speed])
 
 
 func move(delta):
@@ -72,4 +73,6 @@ func move(delta):
 
 func on_DodgeTimer_timeout(previous_smoothing_speed):
 	camera.smoothing_speed = previous_smoothing_speed
+	set_collision_mask_bit(3, true)
+	$Hurtbox/CollisionShape2D.disabled = false
 	dodging = false

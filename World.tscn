@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://subject/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://subject/hostile/Enemy.tscn" type="PackedScene" id=2]
@@ -7,10 +7,28 @@
 [ext_resource path="res://DeathScreen.tscn" type="PackedScene" id=5]
 [ext_resource path="res://object/interactable/storage box/StorageBox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://module/Screenshake.tscn" type="PackedScene" id=7]
+[ext_resource path="res://icon.png" type="Texture" id=8]
+[ext_resource path="res://Stat.gd" type="Script" id=9]
+[ext_resource path="res://UI/pause menu/PauseMenu.tscn" type="PackedScene" id=10]
+[ext_resource path="res://World.gd" type="Script" id=11]
+[ext_resource path="res://object/environment/abandoned car/AbandonedSedan.tscn" type="PackedScene" id=12]
+[ext_resource path="res://asset/PixelFJ.tres" type="DynamicFont" id=13]
+[ext_resource path="res://LevelledUP.gd" type="Script" id=14]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 33, 33 )
 
 [node name="World" type="Node2D"]
+script = ExtResource( 11 )
+
+[node name="Stat" type="Node" parent="."]
+script = ExtResource( 9 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 65, 73 )
 current = true
 process_mode = 0
 smoothing_enabled = true
@@ -28,15 +46,19 @@ region_rect = Rect2( 450, 450, 450, 450 )
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="Interactables" type="YSort" parent="YSort"]
+[node name="Objects" type="YSort" parent="YSort"]
 
-[node name="StorageBox" parent="YSort/Interactables" instance=ExtResource( 6 )]
+[node name="StorageBox" parent="YSort/Objects" instance=ExtResource( 6 )]
 position = Vector2( 48, 96 )
+
+[node name="StaticBody2D" parent="YSort/Objects" instance=ExtResource( 12 )]
+position = Vector2( 187, 129 )
 
 [node name="Characters" type="YSort" parent="YSort"]
 
 [node name="King" parent="YSort/Characters" instance=ExtResource( 4 )]
 position = Vector2( 128, 104 )
+collision_mask = 2147483657
 
 [node name="Passives" type="YSort" parent="YSort"]
 
@@ -66,10 +88,55 @@ position = Vector2( 688, 129.228 )
 [node name="Items" type="YSort" parent="YSort"]
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 65, 73 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../../Camera2D")
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="YSort"]
+position = Vector2( 282, 72 )
+collision_layer = 8
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="YSort/StaticBody2D2"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/StaticBody2D2"]
+shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="Area2D" parent="YSort/StaticBody2D2"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/StaticBody2D2/StaticBody2D"]
+shape = SubResource( 2 )
+
 [node name="UI" type="CanvasLayer" parent="."]
+layer = 5
 
 [node name="DeathScreen" parent="UI" instance=ExtResource( 5 )]
+
+[node name="PauseMenu" parent="UI" instance=ExtResource( 10 )]
+pause_mode = 2
+visible = false
+
+[node name="LevelledUP" type="Label" parent="UI"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -39.5
+margin_top = 4.0
+margin_right = 39.5
+margin_bottom = 9.0
+custom_fonts/font = ExtResource( 13 )
+text = "You levelled up!"
+align = 1
+valign = 1
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MessageTimer" type="Timer" parent="UI/LevelledUP"]
+wait_time = 2.0
+[connection signal="timeout" from="UI/LevelledUP/MessageTimer" to="UI/LevelledUP" method="_on_MessageTimer_timeout"]

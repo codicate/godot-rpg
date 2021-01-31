@@ -1,6 +1,7 @@
 extends Resource
 class_name Item
 
+var items = ["Medkit", "22mm Ammo", "Pill"]
 
 export(String) var name = ""
 export(Texture) var texture

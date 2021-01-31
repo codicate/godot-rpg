@@ -6,6 +6,8 @@ onready var label = $TextureRect/Label
 onready var itemMenu = get_parent().get_parent()
 var itemList
 
+var mouseEntered = false
+
 
 func ready():
 	itemList = itemMenu.itemList
@@ -64,3 +66,36 @@ func drop_data(_position, data):
 		itemMenu.place(index, data.item)
 
 	itemMenu.drag_data = null
+
+
+func _process(_delta):
+	if mouseEntered and Input.is_action_just_pressed("clickr"):
+		var index = get_index()
+		if itemList[index] != null:
+			use(itemList[index].name)
+
+			if itemList[index].stackable and itemList[index].amount > 1:
+				itemList[index].amount -= 1
+			else:
+				itemList[index] = null
+
+			display_item(itemList[index])
+
+
+func use(item):
+	var HUD = itemMenu.get_parent().get_node("HUD")
+	match item:
+		"Medkit":
+			HUD.regenerateHP()
+		"22mm Ammo":
+			pass
+		"Pill":
+			HUD.freezeStamina()
+
+
+func _on_TextureRect_mouse_entered():
+	mouseEntered = true
+
+
+func _on_TextureRect_mouse_exited():
+	mouseEntered = false

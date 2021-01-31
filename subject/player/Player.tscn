@@ -136,7 +136,7 @@ script = ExtResource( 4 )
 itemList = [ null, ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 14 ), null, ExtResource( 16 ), ExtResource( 16 ), null, null, null, null, null, null, null ]
 
 [node name="DodgeTimer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.2
 
 [node name="Body" type="AnimatedSprite" parent="."]
 position = Vector2( -18, -35 )
@@ -177,7 +177,7 @@ visible = false
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 4
-collision_mask = 0
+collision_mask = 2147483648
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]

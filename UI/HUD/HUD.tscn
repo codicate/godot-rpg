@@ -38,3 +38,7 @@ texture_progress = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="FreezeStamina" type="Timer" parent="."]
+wait_time = 5.0
+[connection signal="timeout" from="FreezeStamina" to="." method="_on_FreezeStamina_timeout"]

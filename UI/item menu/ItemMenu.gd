@@ -29,27 +29,23 @@ func place(index, item):
 	var previousItem = itemList[index]
 	itemList[index] = item
 	emit_signal("item_changed", [index])
-	print("place", item, index)
 	return previousItem
 
 
 func swap(index, targetIndex):
 	var item = itemList[index]
-
 	if item is Item:
 		var targetItem = itemList[targetIndex]
 		itemList[index] = targetItem
 		itemList[targetIndex] = item
 
 		emit_signal("item_changed", [index, targetIndex])
-		print("swap", item, targetItem)
 
 
 func remove(index):
 	var previousItem = itemList[index]
 	itemList[index] = null
 	emit_signal("item_changed", [index])
-	print("remove", previousItem)
 	return previousItem
 
 

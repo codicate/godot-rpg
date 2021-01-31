@@ -9,6 +9,7 @@ func randomDrop():
 	if items.size() != 0:
 		var item = items[rand_range(0, items.size())]
 		if item != null:
+			item = item.duplicate()
 			var drop = droppedItem.instance()
 			drop.position = get_owner().position
 			drop.item = item
