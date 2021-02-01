@@ -15,7 +15,7 @@ func _physics_process(_delta):
 	$Muzzle/MuzzleFlash.visible = false
 
 	if equipped:
-		if Input.is_action_pressed("clickl"):
+		if Input.is_action_just_pressed("clickl"):
 			fire()
 
 
@@ -27,7 +27,7 @@ func fire():
 		else:
 			$AnimationPlayer.play("recoilL")
 
-		$MuzzleFlash.visible = true
+		$Muzzle/MuzzleFlash.visible = true
 
 		var bullet = Bullet.instance()
 		var bulletSpread = rand_range(-5, 5)

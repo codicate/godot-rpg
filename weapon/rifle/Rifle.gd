@@ -17,16 +17,18 @@ func _physics_process(_delta):
 	if equipped:
 		if Input.is_action_pressed("clickl"):
 			fire()
+		else:
+			$AnimationPlayer.play("default")
 
 
 func fire():
-	if !cooldown:
-#		if $Sprite.flip_v:
-#			$AnimationPlayer.play("recoilR")
-#
-#		else:
-#			$AnimationPlayer.play("recoilL")
+	if $Sprite.flip_v:
+		$AnimationPlayer.play("recoilL")
 
+	else:
+		$AnimationPlayer.play("recoilR")
+
+	if !cooldown:
 		$Muzzle/MuzzleFlash.visible = true
 
 		var bullet = Bullet.instance()

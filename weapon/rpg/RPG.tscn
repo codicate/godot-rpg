@@ -6,35 +6,35 @@
 [ext_resource path="res://weapon/rpg/RPG.gd" type="Script" id=4]
 [ext_resource path="res://weapon/rpg/rpg empty.png" type="Texture" id=5]
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
 region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
 region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
 region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": false,
 "name": "default",
 "speed": 12.0
 } ]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
@@ -47,8 +47,7 @@ animations = [ {
 "speed": 12.0
 } ]
 
-[sub_resource type="Animation" id=1]
-resource_name = "recoilL"
+[sub_resource type="Animation" id=8]
 length = 0.3
 step = 0.025
 tracks/0/type = "value"
@@ -61,7 +60,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.025, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -4, -2 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( -12, -2 ), Vector2( 0, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:rotation_degrees")
@@ -73,11 +72,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.025, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, -15.0, 0.0 ]
+"values": [ 0.0, -10.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "recoilR"
+[sub_resource type="Animation" id=9]
 length = 0.3
 step = 0.025
 tracks/0/type = "value"
@@ -90,7 +88,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.025, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -4, 2 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( -12, 2 ), Vector2( 0, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:rotation_degrees")
@@ -102,10 +100,12 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.025, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 15.0, 0.0 ]
+"values": [ 0.0, 10.0, 0.0 ]
 }
 
 [node name="RPG" type="Node2D"]
+position = Vector2( -11.7656, 1.96093 )
+rotation = 0.171124
 script = ExtResource( 4 )
 
 [node name="Stat" type="Node" parent="."]
@@ -121,20 +121,19 @@ position = Vector2( 33, 0 )
 
 [node name="MuzzleFlash" type="AnimatedSprite" parent="Muzzle"]
 visible = false
-position = Vector2( 5, 0 )
+position = Vector2( 4.25698, -0.309937 )
 rotation = 1.5708
-frames = SubResource( 4 )
-frame = 4
+frames = SubResource( 6 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -21, -9 )
 z_index = 1
-frames = SubResource( 3 )
+frames = SubResource( 7 )
 playing = true
 centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/recoilL = SubResource( 1 )
-anims/recoilR = SubResource( 2 )
+anims/recoilL = SubResource( 8 )
+anims/recoilR = SubResource( 9 )
 [connection signal="timeout" from="Timer" to="." method="_on_Cooldown_timeout"]
 [connection signal="animation_finished" from="Muzzle/MuzzleFlash" to="." method="_on_MuzzleFlash_animation_finished"]

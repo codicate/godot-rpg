@@ -10,7 +10,6 @@ onready var HP = stat.HP
 
 func _on_Hurtbox_area_entered(area):
 	if area.name != "Detector":
-		print("tgete")
 		var dmg = area.get_owner().get_node("Stat").dmg
 		var playerStat = area.get_owner().get_owner().get_node("Stat")
 		var dmgModifier = playerStat.dmgModifier

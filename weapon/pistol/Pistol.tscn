@@ -64,6 +64,8 @@ tracks/1/keys = {
 }
 
 [node name="Pistol" type="Node2D"]
+position = Vector2( -3.92186, 1.96093 )
+rotation = 0.256685
 script = ExtResource( 3 )
 
 [node name="Stat" type="Node" parent="."]
