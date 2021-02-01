@@ -30,14 +30,15 @@ func fire():
 		$Muzzle/MuzzleFlash.visible = true
 		$AudioStreamPlayer.play()
 
-		var bullet = Bullet.instance()
-		var bulletSpread = rand_range(-5, 5)
+		for i in 10:
+			var bullet = Bullet.instance()
+			var bulletSpread = rand_range(-10, 10)
 
-		bullet.rotation_degrees = muzzle.global_rotation_degrees + bulletSpread
-		bullet.position = muzzle.global_position
+			bullet.rotation_degrees = muzzle.global_rotation_degrees + bulletSpread
+			bullet.position = muzzle.global_position
 
-		bullets.add_child(bullet)
-		bullet.owner = self
+			bullets.add_child(bullet)
+			bullet.owner = self
 
 		cooldown = true
 		timer.start()

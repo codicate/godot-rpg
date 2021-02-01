@@ -41,6 +41,8 @@ func _physics_process(delta):
 
 
 func explode():
+	$AudioStreamPlayer2D.play()
+
 	set_physics_process(false)
 	coll.disabled = false
 

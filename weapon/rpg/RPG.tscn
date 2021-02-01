@@ -104,13 +104,11 @@ tracks/1/keys = {
 }
 
 [node name="RPG" type="Node2D"]
-position = Vector2( -11.7656, 1.96093 )
-rotation = 0.171124
 script = ExtResource( 4 )
 
 [node name="Stat" type="Node" parent="."]
 script = ExtResource( 3 )
-dmg = 20.0
+dmg = 8.0
 
 [node name="Timer" type="Timer" parent="."]
 

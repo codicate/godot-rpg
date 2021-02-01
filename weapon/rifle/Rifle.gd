@@ -29,6 +29,7 @@ func fire():
 		$AnimationPlayer.play("recoilR")
 
 	if !cooldown:
+		$AudioStreamPlayer.play()
 		$Muzzle/MuzzleFlash.visible = true
 
 		var bullet = Bullet.instance()

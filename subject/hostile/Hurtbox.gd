@@ -10,6 +10,8 @@ onready var HP = stat.HP
 
 func _on_Hurtbox_area_entered(area):
 	if area.name != "Detector":
+		$AudioStreamPlayer2D.play()
+
 		var dmg = area.get_owner().get_node("Stat").dmg
 		var playerStat = area.get_owner().get_owner().get_node("Stat")
 		var dmgModifier = playerStat.dmgModifier
@@ -28,7 +30,8 @@ func _on_Hurtbox_area_entered(area):
 			get_parent().set_physics_process(false)
 
 			ani.play("Death")
-			ani.connect("animation_finished", self, "on_death_animation_finished")
+			if !ani.is_connected("animation_finished", self, "on_death_animation_finished"):
+				ani.connect("animation_finished", self, "on_death_animation_finished")
 
 
 func on_death_animation_finished():

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/zapsplat_warfare_bullet_whizz_hit_ground_dirt_small_stones_debris_008_43721.ogg-8f5a80d4ffd519c7abb17f6e5b6375ee.oggstr"
+
+[deps]
+
+source_file="res://subject/hostile/zapsplat_warfare_bullet_whizz_hit_ground_dirt_small_stones_debris_008_43721.ogg"
+dest_files=[ "res://.import/zapsplat_warfare_bullet_whizz_hit_ground_dirt_small_stones_debris_008_43721.ogg-8f5a80d4ffd519c7abb17f6e5b6375ee.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

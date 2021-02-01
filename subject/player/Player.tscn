@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://subject/player/Player.gd" type="Script" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://UI/item menu/ItemMenu.tscn" type="PackedScene" id=15]
 [ext_resource path="res://UI/item/Pill.tres" type="Resource" id=16]
 [ext_resource path="res://weapon/rifle/Rifle.tscn" type="PackedScene" id=17]
+[ext_resource path="res://asset/16x16 shadow.png" type="Texture" id=18]
+[ext_resource path="res://weapon/shotgun/Shotgun.tscn" type="PackedScene" id=19]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 5 )
@@ -139,6 +141,10 @@ itemList = [ null, ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ), ExtR
 [node name="DodgeTimer" type="Timer" parent="."]
 wait_time = 0.4
 
+[node name="Shadow" type="Sprite" parent="."]
+position = Vector2( 0, -6 )
+texture = ExtResource( 18 )
+
 [node name="Body" type="AnimatedSprite" parent="."]
 position = Vector2( -18, -35 )
 frames = SubResource( 10 )
@@ -177,6 +183,9 @@ visible = false
 visible = false
 
 [node name="RPG" parent="AimPivot/EquippedItem" instance=ExtResource( 7 )]
+visible = false
+
+[node name="Shotgun" parent="AimPivot/EquippedItem" instance=ExtResource( 19 )]
 visible = false
 
 [node name="Hurtbox" type="Area2D" parent="."]
