@@ -7,10 +7,11 @@ Zombie RPG prototype made with Godot Engine
 - Level System
 - Dialog System
 - Iteractive Storage & Inventory
+- Multiple Weapons (Pistol, Shotgun, Rifle, Dynamite, Rocket Launcher)
 - Follow in range enemy
 - Press space to dash
 - Enemy loot table
-- Multiple Weapons (Pistol, Shotgun, Rifle, Dynamite, Rocket Launcher)
+- Main & pause menu
 
 ### Images
 ![Screenshot_20221215_013757](https://user-images.githubusercontent.com/63321455/207792809-a2104d03-8227-4634-b3ee-b0106b81193f.png)
