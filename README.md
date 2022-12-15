@@ -2,6 +2,16 @@
  
 Zombie RPG prototype made with Godot Engine 
 
+### Features
+- Health & Experience Bar
+- Level System
+- Dialog System
+- Iteractive Storage & Inventory
+- Follow in range enemy
+- Press space to dash
+- Enemy loot table
+- Multiple Weapons (Pistol, Shotgun, Rifle, Dynamite, Rocket Launcher)
+
 ### Images
 ![Screenshot_20221215_013757](https://user-images.githubusercontent.com/63321455/207792809-a2104d03-8227-4634-b3ee-b0106b81193f.png)
 ![Screenshot_20221215_013155](https://user-images.githubusercontent.com/63321455/207792819-99ac13f3-b44b-4efb-8b48-f02d91d555e9.png)
