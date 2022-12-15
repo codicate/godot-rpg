@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://UI/inventory/inventory slot.png" type="Texture" id=1]
-[ext_resource path="res://asset/5x5 Pixel Font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://asset/PixelFJ.tres" type="DynamicFont" id=2]
 [ext_resource path="res://UI/hotbar/HotbarSlot.gd" type="Script" id=3]
 
 

@@ -1,7 +1,7 @@
 extends Node2D
 
 
-onready var Rocket = preload("res://Weapon/RPG/Rocket.tscn")
+onready var Rocket = preload("res://weapon/rpg/Rocket.tscn")
 onready var sprite = $Sprite
 onready var muzzle = $Muzzle
 onready var rockets = $Muzzle/Rockets

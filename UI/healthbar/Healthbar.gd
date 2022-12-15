@@ -1,6 +1,6 @@
 extends Panel
 
-onready var Chunk = preload("res://UI/Healthbar/Chunk.tscn")
+onready var Chunk = preload("res://UI/healthbar/Chunk.tscn")
 
 onready var stat = get_owner().get_node("Stat")
 onready var chunks = $Chunks

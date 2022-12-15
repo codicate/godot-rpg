@@ -1,7 +1,7 @@
 extends Node2D
 
 
-onready var Bullet = preload("res://Weapon/pistol/Bullet.tscn")
+onready var Bullet = preload("res://weapon/pistol/Bullet.tscn")
 onready var sprite = $Sprite
 onready var muzzle = $Muzzle
 onready var bullets = $Muzzle/Bullets

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/storage box.png-cf177369f4bf2e5d3334fa8843040db0.stex"
+path="res://.import/storage box.png-9021db56867f24fb6db4b4e14039a2c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://object/interactable/storage box/storage box.png"
-dest_files=[ "res://.import/storage box.png-cf177369f4bf2e5d3334fa8843040db0.stex" ]
+source_file="res://subject/interactable/storage box/storage box.png"
+dest_files=[ "res://.import/storage box.png-9021db56867f24fb6db4b4e14039a2c0.stex" ]
 
 [params]
 

@@ -1,4 +1,4 @@
-extends Node
+extends "res://module/Stat.gd"
 
 onready var tween = $Tween
 onready var frequencyTimer = $FrequencyTimer

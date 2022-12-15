@@ -5,7 +5,7 @@
 [ext_resource path="res://asset/white.png" type="Texture" id=3]
 [ext_resource path="res://subject/character/King.tscn" type="PackedScene" id=4]
 [ext_resource path="res://DeathScreen.tscn" type="PackedScene" id=5]
-[ext_resource path="res://object/interactable/storage box/StorageBox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://subject/interactable/storage box/StorageBox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://module/Screenshake.tscn" type="PackedScene" id=7]
 [ext_resource path="res://icon.png" type="Texture" id=8]
 [ext_resource path="res://Stat.gd" type="Script" id=9]
@@ -30,6 +30,7 @@ script = ExtResource( 9 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 65, 73 )
 current = true
+zoom = Vector2( 2, 2 )
 process_mode = 0
 smoothing_enabled = true
 smoothing_speed = 10.0
@@ -64,15 +65,6 @@ collision_mask = 2147483657
 
 [node name="Hostiles" type="YSort" parent="YSort"]
 
-[node name="Enemy" parent="YSort/Hostiles" instance=ExtResource( 2 )]
-position = Vector2( 602.227, 167.08 )
-
-[node name="Enemy2" parent="YSort/Hostiles" instance=ExtResource( 2 )]
-position = Vector2( 640, 185.228 )
-
-[node name="Enemy3" parent="YSort/Hostiles" instance=ExtResource( 2 )]
-position = Vector2( 667.709, 166.381 )
-
 [node name="Enemy4" parent="YSort/Hostiles" instance=ExtResource( 2 )]
 position = Vector2( 674.39, 96 )
 
@@ -85,38 +77,171 @@ position = Vector2( 600, 97.2279 )
 [node name="Enemy7" parent="YSort/Hostiles" instance=ExtResource( 2 )]
 position = Vector2( 694, 134 )
 
-[node name="Enemy8" parent="YSort/Hostiles" instance=ExtResource( 2 )]
-position = Vector2( 617, 209 )
-
-[node name="Enemy9" parent="YSort/Hostiles" instance=ExtResource( 2 )]
-position = Vector2( 734, 149 )
-
 [node name="Enemy10" parent="YSort/Hostiles" instance=ExtResource( 2 )]
 position = Vector2( 642, 58 )
-
-[node name="Enemy11" parent="YSort/Hostiles" instance=ExtResource( 2 )]
-position = Vector2( 735, 215 )
 
 [node name="Enemy12" parent="YSort/Hostiles" instance=ExtResource( 2 )]
 position = Vector2( 690, 56 )
 
-[node name="Enemy13" parent="YSort/Hostiles" instance=ExtResource( 2 )]
-position = Vector2( 695, 191 )
-
-[node name="Enemy14" parent="YSort/Hostiles" instance=ExtResource( 2 )]
-position = Vector2( 768, 191 )
-
-[node name="Enemy15" parent="YSort/Hostiles" instance=ExtResource( 2 )]
-position = Vector2( 680, 218 )
-
-[node name="Enemy16" parent="YSort/Hostiles" instance=ExtResource( 2 )]
-position = Vector2( 721, 182 )
-
 [node name="Enemy17" parent="YSort/Hostiles" instance=ExtResource( 2 )]
 position = Vector2( 722, 110 )
 
-[node name="Enemy18" parent="YSort/Hostiles" instance=ExtResource( 2 )]
-position = Vector2( 760, 139 )
+[node name="Enemy37" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 443.227, 95.08 )
+
+[node name="Enemy38" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 481, 113.228 )
+
+[node name="Enemy39" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 508.709, 94.381 )
+
+[node name="Enemy40" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 515.39, 24 )
+
+[node name="Enemy41" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 473, 49.228 )
+
+[node name="Enemy42" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 441, 25.2279 )
+
+[node name="Enemy43" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 535, 62 )
+
+[node name="Enemy44" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 458, 137 )
+
+[node name="Enemy45" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 575, 77 )
+
+[node name="Enemy46" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 483, -14 )
+
+[node name="Enemy48" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 531, -16 )
+
+[node name="Enemy49" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 536, 119 )
+
+[node name="Enemy50" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 609, 119 )
+
+[node name="Enemy52" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 562, 110 )
+
+[node name="Enemy53" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 563, 38 )
+
+[node name="Enemy54" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 601, 67 )
+
+[node name="Enemy55" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 745.227, 91.08 )
+
+[node name="Enemy56" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 783, 109.228 )
+
+[node name="Enemy57" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 810.709, 90.381 )
+
+[node name="Enemy58" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 817.39, 20 )
+
+[node name="Enemy59" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 775, 45.228 )
+
+[node name="Enemy60" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 743, 21.2279 )
+
+[node name="Enemy61" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 837, 58 )
+
+[node name="Enemy62" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 760, 133 )
+
+[node name="Enemy63" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 877, 73 )
+
+[node name="Enemy64" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 785, -18 )
+
+[node name="Enemy66" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 833, -20 )
+
+[node name="Enemy67" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 838, 115 )
+
+[node name="Enemy68" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 911, 115 )
+
+[node name="Enemy70" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 864, 106 )
+
+[node name="Enemy71" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 865, 34 )
+
+[node name="Enemy72" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 903, 63 )
+
+[node name="Enemy74" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 760, 308.228 )
+
+[node name="Enemy91" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 572.227, -9.91998 )
+
+[node name="Enemy92" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 610, 8.228 )
+
+[node name="Enemy93" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 637.709, -10.619 )
+
+[node name="Enemy94" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 644.39, -81 )
+
+[node name="Enemy95" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 602, -55.772 )
+
+[node name="Enemy96" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 570, -79.7721 )
+
+[node name="Enemy97" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 664, -43 )
+
+[node name="Enemy98" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 587, 32 )
+
+[node name="Enemy99" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 704, -28 )
+
+[node name="Enemy100" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 612, -119 )
+
+[node name="Enemy101" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 705, 38 )
+
+[node name="Enemy102" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 660, -121 )
+
+[node name="Enemy103" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 665, 14 )
+
+[node name="Enemy104" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 738, 14 )
+
+[node name="Enemy105" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 650, 41 )
+
+[node name="Enemy106" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 691, 5 )
+
+[node name="Enemy107" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 692, -67 )
+
+[node name="Enemy108" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 730, -38 )
+
+[node name="Enemy123" parent="YSort/Hostiles" instance=ExtResource( 2 )]
+position = Vector2( 705, 409 )
 
 [node name="Items" type="YSort" parent="YSort"]
 
@@ -172,4 +297,5 @@ __meta__ = {
 
 [node name="MessageTimer" type="Timer" parent="UI/LevelledUP"]
 wait_time = 2.0
+
 [connection signal="timeout" from="UI/LevelledUP/MessageTimer" to="UI/LevelledUP" method="_on_MessageTimer_timeout"]

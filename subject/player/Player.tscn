@@ -20,10 +20,6 @@
 [ext_resource path="res://asset/16x16 shadow.png" type="Texture" id=18]
 [ext_resource path="res://weapon/shotgun/Shotgun.tscn" type="PackedScene" id=19]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 35, 35 )
-
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 5 )
 region = Rect2( 35, 0, 35, 35 )
@@ -56,22 +52,22 @@ region = Rect2( 245, 0, 35, 35 )
 atlas = ExtResource( 5 )
 region = Rect2( 280, 0, 35, 35 )
 
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 35, 35 )
+
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ SubResource( 1 ) ],
-"loop": true,
-"name": "idle",
-"speed": 12.0
-}, {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "run",
 "speed": 12.0
+}, {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 12.0
 } ]
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 35, 35 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 6 )
@@ -105,16 +101,20 @@ region = Rect2( 245, 0, 35, 35 )
 atlas = ExtResource( 6 )
 region = Rect2( 280, 0, 35, 35 )
 
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 35, 35 )
+
 [sub_resource type="SpriteFrames" id=20]
 animations = [ {
-"frames": [ SubResource( 11 ) ],
-"loop": true,
-"name": "idle",
-"speed": 12.0
-}, {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
 "name": "run",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 11 ) ],
+"loop": true,
+"name": "idle",
 "speed": 12.0
 } ]
 
@@ -206,4 +206,5 @@ margin_right = 81.0
 margin_bottom = 30.0
 
 [node name="ItemMenu" parent="UI" instance=ExtResource( 15 )]
+
 [connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_Hurtbox_area_entered"]
